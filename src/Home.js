@@ -10,8 +10,13 @@ const Home = () => {
 
   useEffect(() => {
     // Don't use SetTimeout in real life. This was just to see the loading message in browser.
-    setTimeout(() => {fetch('http://localhost:8000/blogs')
+    // Below the route has a deliberate typo on purpose to trigger the first error handler
+    setTimeout(() => {fetch('http://localhost:8000/blogssss')
     .then(res => {
+      if(!res.ok) {
+        throw Error('could not fetch the data for that resource');
+      }
+
       return res.json()
     })
     .then( data => {

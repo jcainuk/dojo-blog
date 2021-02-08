@@ -2,32 +2,32 @@ import { useState, useEffect } from 'react';
 import BlogList from './BlogList';
 
 const Home = () => {
-  
-  const [blogs, setBlogs] = useState([
+  // Blogs initial state is null (a falsey value)
 
-    // Normally we don't hardcode data like this. It comes from an api endpoint
-    
-    {title: 'My new website', body: 'lorem ipsum...', author: 'Mario', id: 1 },
-    {title: 'Welcome party!', body: 'lorem ipsum...', author: 'Yoshi', id: 2 },
-    {title: 'Web dev top tips', body: 'lorem ipsum...', author: 'Mario', id: 3 }
-  ]);
+  const [blogs, setBlogs] = useState(null);
 
   const [name, setname] =useState('Mario');
   
-  const handleDelete = (id) => {
-    const newBlogs = blogs.filter(blog => blog.id !== id);
-    setBlogs(newBlogs);
-  }
-
 
   useEffect(() => {
-    console.log('use effect ran');
-    console.log(name);
-  }, [ name ]);
+    fetch('http://localhost:8000/blogs')
+    .then(res => {
+      return res.json()
+    })
+    .then( data => {
+      setBlogs(data);
+    });
+  }, []);
 
   return ( 
     <div className="home">
-      <BlogList blogs={ blogs } title="All Blogs!" handleDelete={ handleDelete }/> 
+
+{/* 1. Comments inside children need to be in braces.
+    2. Below we are using Javascript logic. Everything to the left of '&&' won't run
+     if it is null (a falsey value). It only runs is a truthy value. 
+    3. This is how we conditionally output parts of a template */}
+
+      {blogs && <BlogList blogs={ blogs } title="All Blogs!" /> }
       <button onClick={() => setname('Luigi')}>Change Name</button>
       <p>{ name }</p>
       

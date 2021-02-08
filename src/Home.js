@@ -2,16 +2,20 @@ import { useState, useEffect } from 'react';
 import BlogList from './BlogList';
 
 const Home = () => {
-  // Blogs initial state is null (a falsey value)
+  
 
   const [blogs, setBlogs] = useState(null);
   const [isPending, setIsPending] = useState(true);
 
+  // create an error state with initial value set to null
+
+  const [error, setError] = useState(null);
+
 
   useEffect(() => {
     // Don't use SetTimeout in real life. This was just to see the loading message in browser.
-    // Below the route has a deliberate typo on purpose to trigger the first error handler
-    setTimeout(() => {fetch('http://localhost:8000/blogssss')
+    //deliberate typo in url in fetch to test error message
+    setTimeout(() => {fetch('http://localhost:8000/blogss')
     .then(res => {
       if(!res.ok) {
         throw Error('could not fetch the data for that resource');
@@ -21,10 +25,21 @@ const Home = () => {
     })
     .then( data => {
       setBlogs(data);
+
+      //If we get data back cancel the loading message
       setIsPending(false);
+
+      //If we get data back then cancel the error message
+      setError(null);
       })
       .catch(err => {
-        console.log(err.message);
+
+        // Stop the loading message 
+        
+        setIsPending(false);
+
+        // Store the error to a state so we can output it in browser 
+        setError(err.message);
       });
     }, 1000);
   }, []);
@@ -32,6 +47,7 @@ const Home = () => {
 
   return ( 
     <div className="home">
+      { error && <div>{ error }</div> }
       { isPending && <div>Loading...</div> }
       { blogs && <BlogList blogs={ blogs } title="All Blogs!" /> }
       

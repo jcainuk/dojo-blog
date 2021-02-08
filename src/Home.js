@@ -13,17 +13,15 @@ const Home = () => {
     const newBlogs = blogs.filter(blog => blog.id !== id);
     setBlogs(newBlogs);
   }
-/* useEffect is a function that runs after every render of the page
- e.g. delete/refresh etc.
+/* By passing useEffect an array [] as a second argument after the callback function
+You can ensure that the useEffect() function will only run on the first render.
 
- Be very careful with it because changing the state of your data (e.g. with useState) 
- 
- will trigger the useEffect function. You may get stuck in an infinite loop */
+There by doing so the function willl only run once. */
 
   useEffect(() => {
     console.log('use effect ran');
     console.log(blogs);
-  });
+  }, []);
 
   return ( 
     <div className="home">

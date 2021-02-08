@@ -10,7 +10,11 @@ function App() {
     <div className="App">
       <Navbar />
      <div className="content">
-       <Switch></Switch>
+       <Switch>
+         <Route path="/">
+
+         </Route>
+       </Switch>
 
      </div>
     </div>

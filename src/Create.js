@@ -1,5 +1,7 @@
-import { useState } from "react";
-import { useHistory } from "react-router-dom";
+/* eslint-disable react/button-has-type */
+/* eslint-disable jsx-a11y/label-has-associated-control */
+import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 const Create = () => {
   const [title, setTitle] = useState('');
@@ -7,7 +9,6 @@ const Create = () => {
   const [author, setAuthor] = useState('Mario');
   const [isPending, setIsPending] = useState(false);
   const history = useHistory();
-
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -17,38 +18,34 @@ const Create = () => {
 
     fetch('http://localhost:8000/blogs', {
       method: 'POST',
-      headers: {'Content-Type': 'application/JSON'},
-      body: JSON.stringify(blog)
+      headers: { 'Content-Type': 'application/JSON' },
+      body: JSON.stringify(blog),
     }).then(() => {
       console.log('new blog added');
       setIsPending(false);
       history.push('/');
-    })
-    
-  }
+    });
+  };
 
   return (
     <div className="create">
       <h2>Add a New Blog</h2>
       <form onSubmit={handleSubmit}>
         <label>Blog Title:</label>
-        <input 
-        type="text"
-        required
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
+        <input
+          type="text"
+          required
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
         />
         <label>Blog Body:</label>
         <textarea
-        required
-        value={body}
-        onChange={(e) => setBody(e.target.value)}
-        ></textarea>
+          required
+          value={body}
+          onChange={(e) => setBody(e.target.value)}
+        />
         <label>Blog Author:</label>
-        <select
-        value={author}
-        onChange={(e) => setAuthor(e.target.value)}
-        >
+        <select value={author} onChange={(e) => setAuthor(e.target.value)}>
           <option value="Mario">Mario</option>
           <option value="Yoshi">Yoshi</option>
         </select>
@@ -57,6 +54,6 @@ const Create = () => {
       </form>
     </div>
   );
-}
- 
+};
+
 export default Create;

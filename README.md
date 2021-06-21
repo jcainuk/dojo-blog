@@ -69,7 +69,7 @@ Project created as part of the [Full Modern React Tutorial](https://www.youtube.
 
 ## Considerations
 
-This app was designed purely for laptop and desktop computer screens. At the moment it does not work on smartphone screen so moving forward this might need to be fixed and taken into consideration. In addition, I neglected testing. This is something I would like to come back to later.
+This app was designed for laptop and desktop computer screens. At the moment it might not work fully on smartphone screens so moving forward this is an area to be looked at. In addition, I neglected testing. This is something I would like to come back to later.
 
 ## Contact
 

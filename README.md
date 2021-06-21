@@ -1,70 +1,86 @@
-# Getting Started with Create React App
+# Dojo-blog - A simple React app to post and edit blog entries
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a simple blog application that I worked through using the [Full Modern React Tutorial](https://www.youtube.com/watch?v=j942wKiXFu8&list=PL4cUxeGkcC9gZD-Tvwfod2gaISzfRiP9d) from Youtube in order to learn about React from the ground up - setup, JSX templates, components & events. I covered state & the use of hooks, the React Router & also how to handle asynchronous code in components.
 
-## Available Scripts
+This project relies on a local JSON server to host the data rather making HTTP calls to an external API or database. You must open a second terminal to boot up and host the db.JSON files first.
 
-In the project directory, you can run:
 
-### `npm start`
+## Table of contents
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- [General info](#general-info)
+- [Technologies](#technologies)
+- [Languages](#languages)
+- [Status](#status)
+- [Inspiration](#inspiration)
+- [Considerations](#Considerations)
+- [Contact](#contact)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## General info
 
-### `npm test`
+The project covered the following concepts:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- React
+- JSON server
+- Making API calls
+- Promises
+- Manipulating the DOM
+- Adding Event listeners and handling input events
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Technologies
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- React
+- Node and Node Package Manager
+- eslint (eslint-config-airbnb-base, eslint-plugin-import) for code styling
+- JSON
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Languages
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- React and JSX
+- JavaScript
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Scripts
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## "start": "react-scripts start",
+Open up your first terminal and use this to start the application. 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+## "serve": "json-server --watch data/db.json --port 8000",
+Opening up a second terminal and using "npm run server" you can host the JSON data in db.json locally.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Dependencies
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+-  "@testing-library/jest-dom": "^5.11.9",
+-  "@testing-library/react": "^11.2.5",
+-  "react": "^17.0.1",
+-  "react-dom": "^17.0.1",
+-  "react-router-dom": "^5.2.0",
+-  "react-scripts": "4.0.2",
+-  "web-vitals": "^1.1.0"
 
-### Code Splitting
+## Status
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Project is: COMPLETE
 
-### Analyzing the Bundle Size
+## Inspiration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Project created as part of the [Full Modern React Tutorial](https://www.youtube.com/watch?v=j942wKiXFu8&list=PL4cUxeGkcC9gZD-Tvwfod2gaISzfRiP9d) from Youtube. I used this to learn the fundamentals of React and experiment with a JSON server.
 
-### Making a Progressive Web App
+## Considerations
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+This app was designed purely for laptop and desktop computer screens. At the moment it does not work on smartphone screen so moving forward this might need to be fixed and taken into consideration. In addition, I neglected testing. This is something I would like to come back to later.
 
-### Advanced Configuration
+## Contact
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Created by [@jcainuk](https://twitter.com/jcainuk)
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+
+
+

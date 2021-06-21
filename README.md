@@ -47,7 +47,7 @@ Open up your first terminal and use this to start the application.
 
 
 ## "serve": "json-server --watch data/db.json --port 8000",
-Opening up a second terminal and using "npm run server" you can host the JSON data in db.json locally.
+Opening up a second terminal and using "npm run serve" you can host the JSON data in db.json locally.
 
 ## Dependencies
 
